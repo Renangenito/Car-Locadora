@@ -1,0 +1,15 @@
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Negocios.deps.json
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Negocios.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Negocios.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.csproj.AssemblyReference.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.AssemblyInfoInputs.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.AssemblyInfo.cs
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\refint\ProjetoCarLocadora.Negocios.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ref\ProjetoCarLocadora.Negocios.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Infra.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Infra.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.csproj.CopyComplete

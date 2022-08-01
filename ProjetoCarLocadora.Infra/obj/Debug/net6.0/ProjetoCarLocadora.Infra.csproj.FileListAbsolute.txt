@@ -1,0 +1,12 @@
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Infra.deps.json
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Infra.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Infra.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.csproj.AssemblyReference.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.AssemblyInfoInputs.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.AssemblyInfo.cs
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\refint\ProjetoCarLocadora.Infra.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ref\ProjetoCarLocadora.Infra.dll
