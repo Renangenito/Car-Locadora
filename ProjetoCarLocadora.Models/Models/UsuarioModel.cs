@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoCarLocadora.Models.Models
 {
-    internal class UsuarioModel:EnderecoModel
+    public class UsuarioModel:EnderecoModel
     {
         [Key]
         [Required(ErrorMessage = "O CPF completo é obrigatório!")]

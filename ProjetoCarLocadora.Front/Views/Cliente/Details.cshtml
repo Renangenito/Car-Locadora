@@ -1,0 +1,103 @@
+﻿@model ProjetoCarLocadora.Models.Models.ClienteModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4 class="mt-5 text-opacity-75">Detalhes do Cliente</h4>
+    <hr />
+    <dl class="row border p-2 bg-light">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cnh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cnh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInclusao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInclusao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAlteracao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataAlteracao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+</div>
+<div>
+   <div class="mt-4 mb-2">
+            <button type="button" class="btn btn-primary btn-sm">@Html.ActionLink("Editar Cliente", "Edit", new {  valor = Model.Cpf   }, new { @class = "text-white text-decoration-none fw-bold" })</button> |
+           <a asp-action="Index" class=" btn btn-warning btn-sm text-white text-decoration-none fw-bold">Voltar para lista</a>
+        </div>
+</div>

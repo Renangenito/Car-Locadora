@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProjetoCarLocadora.Models.Models.UsuarioModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row mt-5 mb-3">
+	<div class="col-md-6">
+		<h2 class="fw-bold" style="margin-bottom: 25px;">Usuários</h2>
+	</div>
+	<div class="col-md-6 text-end">
+			<a class="btn btn-success m-2 btn-sm fw-bold text-white text-decoration-none" asp-action="Create">Novo Usuário</a>
+	</div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+           
+            <td>
+               @Html.ActionLink("Editar", "Edit", new { valor=item.Cpf }, new { @class = "btn btn-primary btn-sm text-white text-decoration-none fw-bold" }) |
+				@Html.ActionLink("Details", "Details", new {  valor=item.Cpf  }, new { @class = "btn btn-warning btn-sm text-white text-decoration-none fw-bold" }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoCarLocadora.Models.Models
 {
-    internal class FormaDePagamentoModel
+    public class FormaDePagamentoModel
     {
         [Key]
         public int Id { get; set; }

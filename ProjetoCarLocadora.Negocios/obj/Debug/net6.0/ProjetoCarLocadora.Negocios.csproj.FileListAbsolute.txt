@@ -13,3 +13,5 @@ C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Infra.dll
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Infra.pdb
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\obj\Debug\net6.0\ProjetoCarLocadora.Negocios.csproj.CopyComplete
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Negocios\bin\Debug\net6.0\ProjetoCarLocadora.Models.pdb

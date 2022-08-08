@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjetoCarLocadora.Models.Models.CategoriaModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row mt-5 mb-3">
+	<div class="col-md-6">
+		<h2 class="fw-bold" style="margin-bottom: 25px;">Categoria</h2>
+	</div>
+	<div class="col-md-6 text-end">
+			<a class="btn btn-success m-2 btn-sm fw-bold text-white text-decoration-none" asp-action="Create">Nova categoria</a>
+	</div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDiaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAlteracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+            
+                @Html.ActionLink("Editar", "Edit", new { valor=item.Id }, new { @class = "btn btn-primary btn-sm text-white text-decoration-none fw-bold" }) |
+				@Html.ActionLink("Details", "Details", new {  valor=item.Id  }, new { @class = "btn btn-warning btn-sm text-white text-decoration-none fw-bold" }) 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

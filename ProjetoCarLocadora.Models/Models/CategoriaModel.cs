@@ -2,7 +2,7 @@
 
 namespace ProjetoCarLocadora.Models.Models
 {
-    internal class CategoriaModel
+    public class CategoriaModel
     {
 
         [Key]

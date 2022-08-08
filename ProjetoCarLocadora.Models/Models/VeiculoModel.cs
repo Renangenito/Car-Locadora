@@ -2,7 +2,7 @@
 
 namespace ProjetoCarLocadora.Models.Models
 {
-    internal class VeiculoModel
+    public class VeiculoModel
     {
         [Key]
         [Required(ErrorMessage = "A placa do carro é obrigatória!")]

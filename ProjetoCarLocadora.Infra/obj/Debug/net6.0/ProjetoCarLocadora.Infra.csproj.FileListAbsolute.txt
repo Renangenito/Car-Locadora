@@ -10,3 +10,8 @@ C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\refint\ProjetoCarLocadora.Infra.dll
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.pdb
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ref\ProjetoCarLocadora.Infra.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Models.pdb
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.csproj.CopyComplete
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\bin\Debug\net6.0\ProjetoCarLocadora.Infra.runtimeconfig.json
+C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Infra\obj\Debug\net6.0\ProjetoCarLocadora.Infra.genruntimeconfig.cache

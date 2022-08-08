@@ -1,0 +1,55 @@
+﻿@model ProjetoCarLocadora.Models.Models.CategoriaModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4 class="mt-5 text-opacity-75">Detalhes da Categoria</h4>
+    <hr />
+    <dl class="row border p-2 bg-light">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorDiaria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorDiaria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInclusao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInclusao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAlteracao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataAlteracao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+    </dl>
+</div>
+<div>
+  <div class="mt-4 mb-2">
+            <button type="button" class="btn btn-primary btn-sm">@Html.ActionLink("Editar Cliente", "Edit", new {  valor = Model.Id   }, new { @class = "text-white text-decoration-none fw-bold" })</button> |
+           <a asp-action="Index" class=" btn btn-warning btn-sm text-white text-decoration-none fw-bold">Voltar para lista</a>
+        </div>
+</div>
