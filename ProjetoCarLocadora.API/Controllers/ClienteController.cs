@@ -16,7 +16,7 @@ namespace ProjetoCarLocadora.API.Controllers
             _cliente = cliente;
         }
 
-        [HttpGet()]
+        [HttpGet("ObterTodosClientes")]
 
         public async Task<List<ClienteModel>> Get()
         {

@@ -25,7 +25,7 @@ namespace ProjetoCarLocadora.Negocios.Categoria
 
         public List<CategoriaModel> ListaCategorias()
         {
-            return _entityContext.Categorias.OrderBy(id => id.Id).ToList();
+            return _entityContext.Categorias.OrderBy(x => x.Id).ToList();
         }
         public CategoriaModel ObterUmaCategoria(int valor)
         {
@@ -45,7 +45,7 @@ namespace ProjetoCarLocadora.Negocios.Categoria
 
         public void ExcluirCategoria(int valor)
         {
-            var id = _entityContext.Categorias.Single(id => id.Id.Equals(valor));
+            var id = _entityContext.Categorias.Single(x => x.Id.Equals(valor));
             _entityContext.Categorias.Remove(id);
             _entityContext.SaveChanges();
         }

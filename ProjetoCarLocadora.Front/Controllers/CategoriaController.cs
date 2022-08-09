@@ -1,12 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using ProjetoCarLocadora.Models.Models;
 using System.Net.Http.Headers;
+
 
 namespace ProjetoCarLocadora.Front.Controllers
 {
     public class CategoriaController : Controller
     {
+
+
+
+        private readonly IOptions<DadosBase> _dadosBase;
+
+        public CategoriaController(IOptions<DadosBase> dadosBase)
+        {
+            _dadosBase = dadosBase;
+        }
+
         public ActionResult Index(string mensagem = null, bool sucesso = true)
         {
             if (sucesso)
@@ -18,7 +30,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync($"https://localhost:7035/api/Categoria").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterTodasCategoria").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -41,7 +53,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync($"https://localhost:7035/api/Categoria/ObterDadosCategoria?id={valor}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterDadosCategoria?id={valor}").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -78,7 +90,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = client.PostAsJsonAsync($"https://localhost:7035/api/Categoria", categoriaModel).Result;
+                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Categoria", categoriaModel).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -113,7 +125,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync($"https://localhost:7035/api/Categoria/ObterDadosCategoria?id={valor}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterDadosCategoria?id={valor}").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -141,7 +153,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = client.PutAsJsonAsync($"https://localhost:7035/api/Categoria", categoriaModel).Result;
+                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Categoria", categoriaModel).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -174,7 +186,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.DeleteAsync($"https://localhost:7035/api/Categoria?id={valor}").Result;
+            HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}Categoria?id={valor}").Result;
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction(nameof(Index), new { mensagem = "Registro excluído!", sucesso = true });

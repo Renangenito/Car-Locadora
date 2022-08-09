@@ -12,7 +12,7 @@ namespace ProjetoCarLocadora.Models.Models
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "O Rg é obrigatório!")]
-        [StringLength(50, MinimumLength = 12, ErrorMessage = "Este campo deve ter entre 5 e 50 caracteres!")]
+        [StringLength(50, MinimumLength = 12, ErrorMessage = "Este campo deve ter entre 12 e 50 caracteres!")]
         public string Rg { get; set; }
 
         [Display(Name = "Nome Completo")]
@@ -30,7 +30,7 @@ namespace ProjetoCarLocadora.Models.Models
         [StringLength(15, MinimumLength = 10, ErrorMessage = "Este campo deve ter no mínimo 10 e no máximo 15 caracteres!")]
         public string Celular { get; set; }
 
-        [StringLength(300, MinimumLength = 10, ErrorMessage = "Este campo deve ter no mínimo 4 e no máximo 300 caracteres!")]
+        [StringLength(300, MinimumLength = 4, ErrorMessage = "Este campo deve ter no mínimo 4 e no máximo 300 caracteres!")]
         public string Senha { get; set; }
 
         [Required(ErrorMessage = "A data de inclusão é obrigatória!")]

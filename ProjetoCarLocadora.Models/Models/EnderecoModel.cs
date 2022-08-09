@@ -19,7 +19,7 @@ namespace ProjetoCarLocadora.Models.Models
         public string Cidade { get; set; } = "";
 
         [Required(ErrorMessage = "O Estado é obrigatório!")]
-        [StringLength(2, MinimumLength = 2, ErrorMessage = "Este campo deve ter no mínimo 9 e no máximo 30 caracteres!")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "Este campo deve ter 2 caracteres!")]
         public string Estado { get; set; } = "";
 
 

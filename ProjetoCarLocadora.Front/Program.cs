@@ -1,5 +1,9 @@
+using ProjetoCarLocadora.Models.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.Configure<DadosBase>(builder.Configuration.GetSection("DadosBase"));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
