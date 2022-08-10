@@ -38,6 +38,8 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] CategoriaModel categoriaModel)
         {
+            categoriaModel.DataInclusao = DateTime.Now;
+            categoriaModel.DataAlteracao = null;
             _categoria.IncluirCategoria(categoriaModel);
         }
 
@@ -45,6 +47,7 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPut()]
         public void Put([FromBody] CategoriaModel categoriaModel)
         {
+            categoriaModel.DataAlteracao = DateTime.Now;
             _categoria.AlterarCategoria(categoriaModel);
         }
 

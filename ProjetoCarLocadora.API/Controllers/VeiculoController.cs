@@ -38,6 +38,8 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] VeiculoModel veiculoModel)
         {
+             veiculoModel.DataInclusao = DateTime.Now;
+             veiculoModel.DataAlteracao = null;
             _veiculo.IncluirVeiculos(veiculoModel);
         }
 
@@ -45,6 +47,7 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPut()]
         public void Put([FromBody] VeiculoModel veiculoModel)
         {
+             veiculoModel.DataAlteracao = DateTime.Now;
             _veiculo.AlterarVeiculos(veiculoModel);
         }
     }

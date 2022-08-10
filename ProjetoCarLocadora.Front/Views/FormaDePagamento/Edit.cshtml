@@ -4,44 +4,47 @@
     ViewData["Title"] = "Edit";
 }
 
-<h4>Editar Forma de Pagamento</h4>
+<h4 class="fw-bold">Editar Forma de Pagamento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           <div class="form-group mt-3">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" readonly/>
+            <div class="form-group mt-3">
+                <label asp-for="Id" style="color: #563d7c;" class="control-label fw-bold"></label>
+                <input asp-for="Id" class="form-control" readonly />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <div class="form-group mt-3">
-                <label asp-for="Descricao" class="control-label"></label>
+                <label asp-for="Descricao" style="color: #563d7c;" class="control-label fw-bold"></label>
                 <input asp-for="Descricao" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-          
+
             <div class="form-group mt-3">
-                <label asp-for="DataAlteracao" class="control-label"></label>
+                <label asp-for="DataAlteracao" style="color: #563d7c;" class="control-label fw-bold"></label>
                 <input asp-for="DataAlteracao" class="form-control" />
                 <span asp-validation-for="DataAlteracao" class="text-danger"></span>
             </div>
             <div class="form-group form-check mt-3 mb-3">
-                <label class="form-check-label">
+                <label style="color: #563d7c;" class="form-check-label fw-bold">
                     <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
                 </label>
             </div>
-            <div class="form-group mt-2 mb-2">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+            <div class="form-group mt-2 mb-2 d-flex justify-content-between">
+                <div>
+                    <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para lista</a>
+                </div>
+                <input type="submit" value="Salvar Pagamento" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Voltar para a lista</a>
-</div>
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

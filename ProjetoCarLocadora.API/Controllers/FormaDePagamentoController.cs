@@ -37,6 +37,8 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPost()]
         public void Post([FromBody] FormaDePagamentoModel formaDePagamentoModel)
         {
+            formaDePagamentoModel.DataInclusao = DateTime.Now;
+            formaDePagamentoModel.DataAlteracao = null;
             _formaPagamento.IncluirFormaPagamento(formaDePagamentoModel);
         }
 
@@ -44,6 +46,7 @@ namespace ProjetoCarLocadora.API.Controllers
         [HttpPut()]
         public void Put([FromBody] FormaDePagamentoModel formaDePagamentoModel)
         {
+            formaDePagamentoModel.DataAlteracao = DateTime.Now;
             _formaPagamento.AlterarFormaPagamento(formaDePagamentoModel);
         }
     }
