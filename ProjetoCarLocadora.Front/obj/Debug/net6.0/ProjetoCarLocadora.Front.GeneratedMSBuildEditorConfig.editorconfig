@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Categoria/_Categoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXF9DYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,6 +49,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Cliente/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxfRm9ybXVsYXJpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/FormaDePagamento/Create.cshtml]
@@ -95,6 +103,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Usuario/_Usuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xfVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Veiculo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +121,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Veiculo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/Veiculo/_Veiculo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xfVmVpY3Vsby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Renan/Desktop/Projeto-Car-Locador/ProjetoCarLocadora/ProjetoCarLocadora.Front/Views/_ViewImports.cshtml]

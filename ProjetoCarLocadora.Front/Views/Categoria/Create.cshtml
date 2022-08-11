@@ -10,29 +10,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Descricao" style="color: #563d7c;" class="control-label fw-bold"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group mt-2">
-                <label asp-for="ValorDiaria" style="color: #563d7c;" class="control-label fw-bold"></label>
-                <input asp-for="ValorDiaria" class="form-control" />
-                <span asp-validation-for="ValorDiaria" class="text-danger"></span>
-            </div>
-
-            <div class="form-group form-check mt-3 mb-3">
-                <label style="color: #563d7c;" class="form-check-label fw-bold">
-                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
-                </label>
-            </div>
-            <div class="form-group mt-2 mb-2 d-flex justify-content-between">
-                <div>
-                    <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para a lista</a>
-                </div>
-                <input type="submit" value="Salvar Categoria" class="btn btn-primary" />
-            </div>
+            <partial name="_Categoria" />
         </form>
     </div>
 </div>
