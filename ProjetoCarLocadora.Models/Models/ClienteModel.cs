@@ -29,7 +29,7 @@ namespace ProjetoCarLocadora.Models.Models
         public string? Telefone { get; set; }
 
         [Required(ErrorMessage = "O celular é obrigatório!")]
-        [StringLength(14, MinimumLength = 14, ErrorMessage = "Este campo deve ter 14 caracteres!")]
+        [StringLength(15, MinimumLength = 15, ErrorMessage = "Este campo deve ter 15 caracteres!")]
         public string Celular { get; set; }
 
         [Required(ErrorMessage = "A data de inclusão é obrigatória!")]

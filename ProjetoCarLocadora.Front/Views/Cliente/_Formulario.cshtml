@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label asp-for="Cpf" style="color: #563d7c;" class="control-label fw-bold"></label>
-            <input asp-for="Cpf" class="form-control" />
+            <input asp-for="Cpf" class="form-control maskCpf" />
             <span asp-validation-for="Cpf" class="text-danger"></span>
         </div>
     </div>
@@ -38,14 +38,14 @@
     <div class="col-md-6">
         <div class="form-group">
             <label asp-for="Telefone" style="color: #563d7c;" class="control-label fw-bold"></label>
-            <input asp-for="Telefone" class="form-control" />
+            <input asp-for="Telefone" class="form-control maskTelefone" />
             <span asp-validation-for="Telefone" class="text-danger"></span>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label asp-for="Celular" style="color: #563d7c;" class="control-label fw-bold"></label>
-            <input asp-for="Celular" class="form-control" />
+            <input asp-for="Celular" class="form-control maskCelular" />
             <span asp-validation-for="Celular" class="text-danger"></span>
         </div>
     </div>
@@ -85,7 +85,22 @@
         </div>
     </div>
 </div>
-
+<div class="row mb-2">
+    <div class="col-md-6">
+        @*<div class="form-group">
+            <label asp-for="DataInclusao" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="DataInclusao" class="form-control" readonly/>
+            <span asp-validation-for="DataInclusao" class="text-danger"></span>
+        </div>*@
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="DataAlteracao" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="DataAlteracao" class="form-control" readonly/>
+            <span asp-validation-for="DataAlteracao" class="text-danger"></span>
+        </div>
+    </div>
+</div>
 <div class="row mb-2">
     <div class="col-md-12">
         <div class="form-group">

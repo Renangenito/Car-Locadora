@@ -35,7 +35,7 @@ namespace ProjetoCarLocadora.API.Controllers
         }
 
         [HttpPost()]
-        public void Post([FromBody] ClienteModel clienteModel)
+        public async Task Post([FromBody] ClienteModel clienteModel)
         {
             clienteModel.DataInclusao = DateTime.Now;
             clienteModel.DataAlteracao = null;

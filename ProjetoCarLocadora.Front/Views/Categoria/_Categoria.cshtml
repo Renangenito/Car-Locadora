@@ -11,6 +11,14 @@
     <span asp-validation-for="ValorDiaria" class="text-danger"></span>
 </div>
 
+    <div class="col-md-12">
+        <div class="form-group">
+            <label asp-for="DataAlteracao" class="control-label"></label>
+            <input asp-for="DataAlteracao" class="form-control" readonly />
+            <span asp-validation-for="DataAlteracao" class="text-danger"></span>
+        </div>
+    </div>
+
 <div class="form-group form-check mt-3 mb-3">
     <label style="color: #563d7c;" class="form-check-label fw-bold">
         <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
