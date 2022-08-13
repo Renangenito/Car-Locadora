@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoCarLocadora.Models.Models;
 using ProjetoCarLocadora.Negocios.FormaDePagamento;
@@ -7,6 +8,7 @@ namespace ProjetoCarLocadora.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FormaDePagamentoController : ControllerBase
     {
         public readonly IFormaPagamento _formaPagamento;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoCarLocadora.Models.Models;
 using ProjetoCarLocadora.Negocios.Veiculo;
@@ -7,6 +8,7 @@ namespace ProjetoCarLocadora.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class VeiculoController : ControllerBase
     {
 
