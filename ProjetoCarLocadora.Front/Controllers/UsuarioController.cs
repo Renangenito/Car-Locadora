@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using ProjetoCarLocadora.Front.Servico;
 using ProjetoCarLocadora.Models.Models;
 using System.Net.Http.Headers;
 
@@ -9,12 +10,14 @@ namespace ProjetoCarLocadora.Front.Controllers
     public class UsuarioController : Controller
     {
 
-
         private readonly IOptions<DadosBase> _dadosBase;
+        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
 
-        public UsuarioController(IOptions<DadosBase> dadosBase)
+
+        public UsuarioController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel)
         {
             _dadosBase = dadosBase;
+            _loginRespostaModel = loginRespostaModel;
         }
 
         public ActionResult Index(string mensagem = null, bool sucesso = true)
@@ -28,6 +31,9 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Usuario").Result;
 
             if (response.IsSuccessStatusCode)
@@ -37,7 +43,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar mostrar a lista de Usuários!!");
             }
         }
 
@@ -48,6 +54,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Usuario/ObterDadosUsuario?cpf={valor}").Result;
 
@@ -58,7 +66,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar mostrar os detalhes do Usuário!!");
             }
 
 
@@ -80,11 +88,12 @@ namespace ProjetoCarLocadora.Front.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    /*                    new ClienteDB().Inserir(clienteModel);
-                    */
+                   
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
                     HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Usuario", usuarioModel).Result;
 
@@ -95,7 +104,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("DEU ZICA!!!!");
+                        throw new Exception("Erro ao tentar inserir um novo Usuário!!");
                     }
 
 
@@ -120,6 +129,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Usuario/ObterDadosUsuario?cpf={valor}").Result;
 
@@ -130,7 +141,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar editar o Usuário!!");
             }
         }
 
@@ -142,12 +153,13 @@ namespace ProjetoCarLocadora.Front.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    /*                    new ClienteDB().Alterar(clienteModel);
-                    */
+                    
 
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
                     HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Usuario", usuarioModel).Result;
 
@@ -158,7 +170,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("DEU ZICA!!!!");
+                        throw new Exception("Erro ao tentar editar o Usuário!!");
                     }
 
 
@@ -181,6 +193,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}Usuario?cpf={valor}").Result;
             if (response.IsSuccessStatusCode)
@@ -189,7 +203,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!");
+                throw new Exception("Erro ao tentar deletar o Usuário!!");
             }
         }
 

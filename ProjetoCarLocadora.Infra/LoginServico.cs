@@ -18,7 +18,7 @@ namespace ProjetoCarLocadora.Infra
             loginRespostaModel.DataExpiracao = null;
 
 
-            if (loginRequisicaoModel.Usuario == "UsuarioDevPratica" && loginRequisicaoModel.Senha == "SenhaDevPratica")
+            if (loginRequisicaoModel.Usuario == "UsuarioCarLocadora" && loginRequisicaoModel.Senha == "SenhaCarLocadora")
             {
                 loginRespostaModel = new GeradorToken().GerarToken(loginRespostaModel);
             }

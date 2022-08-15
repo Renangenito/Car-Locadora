@@ -1,0 +1,46 @@
+﻿@model ProjetoCarLocadora.Models.Models.FormaDePagamentoModel
+
+
+<div class="row mb-2">
+    <div class="col-md-6">
+        <div class="form-group mt-4">
+            <label asp-for="Id" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="Id" class="form-control" readonly />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group mt-4">
+            <label asp-for="Descricao" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="Descricao" class="form-control" />
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<div class="row mb-2">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="DataInclusao" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="DataInclusao" class="form-control" readonly />
+            <span asp-validation-for="DataInclusao" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="DataAlteracao" style="color: #563d7c;" class="control-label fw-bold"></label>
+            <input asp-for="DataAlteracao" class="form-control" readonly />
+            <span asp-validation-for="DataAlteracao" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<div class="form-group form-check mt-3 mb-3">
+    <label style="color: #563d7c;" class="form-check-label fw-bold">
+        <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+    </label>
+</div>
+<div class="form-group mt-2 mb-2 d-flex justify-content-between">
+    <div>
+        <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para a lista</a>
+    </div>
+    <input type="submit" value="Salvar Pagamento" class="btn btn-primary" />
+</div>

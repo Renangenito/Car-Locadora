@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using ProjetoCarLocadora.Front.Servico;
 using ProjetoCarLocadora.Models.Models;
 using System.Net.Http.Headers;
 
@@ -10,12 +11,14 @@ namespace ProjetoCarLocadora.Front.Controllers
     {
 
         private readonly IOptions<DadosBase> _dadosBase;
+        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
 
-        public FormaDePagamentoController(IOptions<DadosBase> dadosBase)
+
+        public FormaDePagamentoController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel)
         {
             _dadosBase = dadosBase;
+            _loginRespostaModel = loginRespostaModel;
         }
-
 
         public ActionResult Index(string mensagem = null, bool sucesso = true)
         {
@@ -28,6 +31,9 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento").Result;
 
             if (response.IsSuccessStatusCode)
@@ -37,7 +43,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar mostrar a lista de Formas de Pagamento!!");
             }
 
         }
@@ -48,6 +54,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento/ObterDadosFormaPagamento?id={valor}").Result;
 
@@ -58,7 +66,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar mostrar os detalhes da Forma de Pagamento!!");
             }
 
 
@@ -80,11 +88,12 @@ namespace ProjetoCarLocadora.Front.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    /*                    new ClienteDB().Inserir(clienteModel);
-                    */
+                   
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
                     HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento", formaDePagamentoModel).Result;
 
@@ -95,7 +104,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("DEU ZICA!!!!");
+                        throw new Exception("Erro ao tentar inserir uma nova Forma de Pagamento!!");
                     }
 
 
@@ -120,6 +129,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento/ObterDadosFormaPagamento?id={valor}").Result;
 
@@ -130,7 +141,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!!!!");
+                throw new Exception("Erro ao tentar editar uma Forma de Pagamento!!");
             }
         }
 
@@ -142,12 +153,13 @@ namespace ProjetoCarLocadora.Front.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    /*                    new ClienteDB().Alterar(clienteModel);
-                    */
+                
 
                     HttpClient client = new HttpClient();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
                     HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento", formaDePagamentoModel).Result;
 
@@ -158,7 +170,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("DEU ZICA!!!!");
+                        throw new Exception("Erro ao tentar editar uma Forma de Pagamento!!");
                     }
 
 
@@ -181,6 +193,8 @@ namespace ProjetoCarLocadora.Front.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                new ApiToken(_dadosBase, _loginRespostaModel).Obter());
 
             HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento?id={valor}").Result;
             if (response.IsSuccessStatusCode)
@@ -189,7 +203,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("DEU ZICA!");
+                throw new Exception("Erro ao tentar deletar uma Forma de Pagamento!!");
             }
         }
 

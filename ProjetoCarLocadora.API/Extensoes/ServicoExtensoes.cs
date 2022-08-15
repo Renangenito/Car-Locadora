@@ -18,6 +18,16 @@ namespace ProjetoCarLocadora.API.Extensoes
         public static void ConfigurarSwagger(this IServiceCollection services) =>
             services.AddSwaggerGen(c =>
         {
+
+
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "API - CarLocadora",
+                Version = "v1",
+                Description = "Cadastrar, Buscar, Editar e Ecluir."
+            });
+
+
             c.EnableAnnotations();
 
             var securityScheme = new OpenApiSecurityScheme

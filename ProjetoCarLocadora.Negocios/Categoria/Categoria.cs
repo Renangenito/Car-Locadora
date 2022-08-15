@@ -1,18 +1,12 @@
 ﻿using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
-using ProjetoCarLocadora.Negocios.Categoria;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ProjetoCarLocadora.Negocios.Categoria
 {
     public class Categoria : ICategoria
     {
 
-        #region Chamada Inteface
 
         private readonly ControleCarLocadoraDBContext _entityContext;
 
@@ -20,7 +14,7 @@ namespace ProjetoCarLocadora.Negocios.Categoria
         {
             _entityContext = entityContext;
         }
-        #endregion
+      
 
 
         public List<CategoriaModel> ListaCategorias()

@@ -39,7 +39,7 @@ namespace ProjetoCarLocadora.Infra
                 Issuer = "EmitenteDoJWT",
                 Audience = "DestinatarioDoJWT",
                 NotBefore = DateTime.Now,
-                Expires = DateTime.Now.AddMinutes(1),
+                Expires = DateTime.Now.AddMinutes(10),
                 SigningCredentials = signingCredentials,
             };
 

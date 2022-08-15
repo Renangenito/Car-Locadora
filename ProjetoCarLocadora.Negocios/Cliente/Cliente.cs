@@ -7,14 +7,13 @@ namespace ProjetoCarLocadora.Negocios.Cliente
     public class Cliente : ICliente
     {
 
-        #region Chamando Interface
+      
 
         private readonly ControleCarLocadoraDBContext _entityContext;
         public Cliente(ControleCarLocadoraDBContext entityContext)
         {
             _entityContext = entityContext;
         }
-        #endregion
 
         public void AlterarCliente(ClienteModel clientesModel)
         {

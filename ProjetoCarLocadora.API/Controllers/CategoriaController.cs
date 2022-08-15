@@ -8,8 +8,8 @@ namespace ProjetoCarLocadora.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
 
+    [Authorize]
     public class CategoriaController : ControllerBase
     {
 
