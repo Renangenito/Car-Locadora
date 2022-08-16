@@ -12,6 +12,12 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                <partial name="_Formulario" />
+                <div class="form-group mt-2 mb-2 d-flex justify-content-between">
+                <div>
+                    <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para Lista</a>
+                </div>
+                <input type="submit" value="Salvar Cliente" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>

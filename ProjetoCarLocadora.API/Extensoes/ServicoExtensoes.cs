@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;
 using Microsoft.IdentityModel.Tokens;
+using AspNetCoreRateLimit;
 
 namespace ProjetoCarLocadora.API.Extensoes
 {
@@ -78,7 +79,7 @@ namespace ProjetoCarLocadora.API.Extensoes
         }
 
 
-
+        
 
 
         public static void ConfigurarServicos(this IServiceCollection services)
@@ -94,5 +95,43 @@ namespace ProjetoCarLocadora.API.Extensoes
             services.AddScoped<IUsuario, Usuario>();
         }
 
+        //public static void ConfigureRateLimitingOptions(this IServiceCollection services)
+        //{
+        //    var rateLimitRules = new List<RateLimitRule>
+        //    {
+        //        new RateLimitRule
+        //        {
+        //            Endpoint = "post:/api/Login",
+        //            Limit = 2,
+        //            Period = "10s",
+        //        },
+
+        //        //new RateLimitRule
+        //        //{
+        //        //    Endpoint = "*",
+        //        //    Period = "10s",
+        //        //     Limit = 2,
+        //        //},
+
+
+
+
+        //    };
+
+        //    services.Configure<IpRateLimitOptions>(opt =>
+        //    {
+        //        opt.EnableEndpointRateLimiting = true;
+        //        opt.StackBlockedRequests = false;
+        //        opt.GeneralRules = rateLimitRules;
+        //    });
+
+        //    services.AddInMemoryRateLimiting();
+
+        //    services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+        //    services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+        //    services.AddSingleton<RateLimitConfiguration, RateLimitConfiguration>();
+
+        //}
     }
 }
+

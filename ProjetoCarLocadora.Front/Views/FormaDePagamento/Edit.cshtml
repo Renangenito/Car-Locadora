@@ -20,7 +20,11 @@
                 <input asp-for="Descricao" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-
+            <div class="form-group mt-3">
+                <label asp-for="DataInclusao" style="color: #563d7c;" class="control-label fw-bold"></label>
+                <input asp-for="DataInclusao" class="form-control" readonly/>
+                <span asp-validation-for="DataInclusao" class="text-danger"></span>
+            </div>
             <div class="form-group mt-3">
                 <label asp-for="DataAlteracao" style="color: #563d7c;" class="control-label fw-bold"></label>
                 <input asp-for="DataAlteracao" class="form-control" readonly/>

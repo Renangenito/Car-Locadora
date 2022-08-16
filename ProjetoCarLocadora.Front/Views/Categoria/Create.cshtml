@@ -11,6 +11,19 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <partial name="_Categoria" />
+            <div class="col-md-6">
+                <div class="form-group form-check mt-3 mb-3">
+                    <label style="color: #563d7c;" class="form-check-label fw-bold">
+                        <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                    </label>
+                </div>
+                </div>
+            <div class="form-group mt-2 mb-2 d-flex justify-content-between">
+                <div>
+                    <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para a lista</a>
+                </div>
+                <input type="submit" value="Salvar Categoria" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>

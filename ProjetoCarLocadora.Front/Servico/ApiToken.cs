@@ -50,7 +50,17 @@ namespace ProjetoCarLocadora.Front.Servico
 
         public string Obter()
         {
-            ObterToken();
+            if (_loginRespostaModel.Value.Autenticado == false)
+            {
+                ObterToken();
+            }
+            else
+            {
+                if (DateTime.Now >= _loginRespostaModel.Value.DataExpiracao)
+                {
+                    ObterToken();
+                }
+            }
             return _loginRespostaModel.Value.Token;
         }
     }

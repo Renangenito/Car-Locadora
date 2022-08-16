@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using ProjetoCarLocadora.API.Extensoes;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigurarJWT();
 builder.Services.ConfigurarSwagger();
 
+builder.Services.AddMemoryCache();
+//builder.Services.ConfigureRateLimitingOptions();
 
 builder.Services.ConfigurarServicos();
 
@@ -25,6 +28,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+//app.UseIpRateLimiting();
 
 app.MapControllers();
 app.Run();
