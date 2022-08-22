@@ -13,5 +13,7 @@ namespace ProjetoCarLocadora.Negocios.Cliente
         ClienteModel ObterUmCliente(string cpf);
         void IncluirCliente(ClienteModel clientesModel);
         void AlterarCliente(ClienteModel clientesModel);
+        void ExcluirCliente(string cpf);
+
     }
 }

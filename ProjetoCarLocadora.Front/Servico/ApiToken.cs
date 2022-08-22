@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 
 namespace ProjetoCarLocadora.Front.Servico
 {
-    public class ApiToken
+    public class ApiToken : IApiToken
     {
         private readonly IOptions<DadosBase> _dadosBase;
         private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
@@ -63,5 +63,7 @@ namespace ProjetoCarLocadora.Front.Servico
             }
             return _loginRespostaModel.Value.Token;
         }
+
+       
     }
 }

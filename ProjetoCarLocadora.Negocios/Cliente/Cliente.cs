@@ -36,5 +36,11 @@ namespace ProjetoCarLocadora.Negocios.Cliente
             return _entityContext.Clientes.Single(x => x.Cpf.Equals(cpf));
         }
 
+        public void ExcluirCliente(string cpf)
+        {
+            var cpfCliente = _entityContext.Clientes.Single(x => x.Cpf.Equals(cpf));
+            _entityContext.Clientes.Remove(cpfCliente);
+            _entityContext.SaveChanges();
+        }
     }
 }

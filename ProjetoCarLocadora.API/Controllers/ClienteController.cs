@@ -53,7 +53,13 @@ namespace ProjetoCarLocadora.API.Controllers
             _cliente.AlterarCliente(clienteModel);
         }
 
+        [HttpDelete()]
+        public void Delete([FromQuery] string cpf)
+        {
 
+            //Utilizando o Entity
+            _cliente.ExcluirCliente(cpf);
+        }
 
     }
 }
