@@ -2,6 +2,7 @@
 using ProjetoCarLocadora.Negocios.FormaDePagamento;
 using ProjetoCarLocadora.Negocios.Usuario;
 using ProjetoCarLocadora.Negocios.Veiculo;
+using ProjetoCarLocadora.Negocios.ManutencaoVeiculo;
 using Microsoft.EntityFrameworkCore;
 using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Negocios.Categoria;
@@ -10,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;
 using Microsoft.IdentityModel.Tokens;
 using AspNetCoreRateLimit;
+using ProjetoCarLocadora.Negocios.ManutencaoVeiculo;
 
 namespace ProjetoCarLocadora.API.Extensoes
 {
@@ -93,6 +95,7 @@ namespace ProjetoCarLocadora.API.Extensoes
             services.AddScoped<IVeiculo, Veiculo>();
             services.AddScoped<IFormaPagamento, FormaPagamento>();
             services.AddScoped<IUsuario, Usuario>();
+            services.AddScoped<IManutencaoVeiculo, ManutencaoVeiculo>();
         }
 
         //public static void ConfigureRateLimitingOptions(this IServiceCollection services)

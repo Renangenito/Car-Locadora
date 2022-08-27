@@ -40,6 +40,8 @@ namespace ProjetoCarLocadora.Models.Models
 
         [Display(Name = "Data Alteração")]
         public DateTime? DataAlteracao { get; set; }
+        public int? CategoriaId { get; set; }
+        public CategoriaModel? Categoria { get; set; }
 
     }
 }

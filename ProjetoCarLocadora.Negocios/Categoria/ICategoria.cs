@@ -1,6 +1,4 @@
-﻿
-
-using ProjetoCarLocadora.Models.Models;
+﻿using ProjetoCarLocadora.Models.Models;
 
 namespace ProjetoCarLocadora.Negocios.Categoria
 {

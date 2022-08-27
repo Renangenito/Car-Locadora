@@ -58,6 +58,13 @@
         <input asp-for="Opcionais" class="form-control" />
         <span asp-validation-for="Opcionais" class="text-danger"></span>
     </div>
+    <div class="col-md-12">
+				<div class="form-group">
+					<label asp-for="CategoriaId" style="color: #563d7c;" class="control-label fw-bold">Categoria do Veículo</label>
+					<select asp-for="CategoriaId" asp-items="ViewBag.CategoriasDeVeiculos" class="form-control text-uppercase">
+					</select>
+				</div>
+			</div>
 </div>
 
 

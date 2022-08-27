@@ -18,6 +18,8 @@ namespace ProjetoCarLocadora.Infra.Entity
         public DbSet<FormaDePagamentoModel> FormasDePagamento { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
         public DbSet<VeiculoModel> Veiculos { get; set; }
+        public DbSet<ManutencaoVeiculoModel> ManutencaoVeiculo { get; set; }
+
 
     }
 }

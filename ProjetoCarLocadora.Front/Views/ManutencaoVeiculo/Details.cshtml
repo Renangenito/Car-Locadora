@@ -1,0 +1,64 @@
+﻿@model ProjetoCarLocadora.Models.Models.ManutencaoVeiculoModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4 class="mt-5 text-opacity-75">Detalhes da Manutenção do Veículo</h4>
+    <hr />
+    <dl class="row border p-2 bg-light">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataServico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataServico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Garantia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Garantia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorServico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorServico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInclusao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInclusao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAlteracao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataAlteracao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VeiculoPlaca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VeiculoPlaca)
+        </dd>
+    </dl>
+</div>
+<div class="mt-4 mb-2">
+            <button type="button" class="btn btn-primary btn-sm">@Html.ActionLink("Editar Manutenção", "Edit", new {  valor = Model.Id   }, new { @class = "text-white text-decoration-none fw-bold" })</button> |
+           <a asp-action="Index" class=" btn btn-warning btn-sm text-white text-decoration-none fw-bold">Voltar para lista</a>
+        </div>

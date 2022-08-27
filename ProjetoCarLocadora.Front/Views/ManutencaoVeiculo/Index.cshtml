@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProjetoCarLocadora.Models.Models.ManutencaoVeiculoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row mt-5 mb-3">
+	<div class="col-md-6">
+		<h2 class="fw-bold" style="margin-bottom: 25px;">Manutenção do Veículo</h2>
+	</div>
+	<div class="col-md-6 text-end">
+			<a class="btn btn-success m-2 btn-sm fw-bold text-white text-decoration-none" asp-action="Create">Nova Manutenção</a>
+	</div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Garantia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorServico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeiculoPlaca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garantia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeiculoPlaca)
+            </td>
+            <td>
+            
+                @Html.ActionLink("Editar", "Edit", new { valor=item.Id }, new { @class = "btn btn-primary btn-sm text-white text-decoration-none fw-bold" }) |
+				@Html.ActionLink("Detalhes", "Details", new {  valor=item.Id  }, new { @class = "btn btn-warning btn-sm text-white text-decoration-none fw-bold" }) |
+                <a class="text-white text-decoration-none fw-bold btn btn-danger btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir Categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="divModalTexto" class="mb-3">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                @Html.ActionLink("Excluir", "Delete", null, htmlAttributes: new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        var exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function(event) {
+            
+            var button = event.relatedTarget
+            var id = button.getAttribute('data-bs-id')
+            var nome = button.getAttribute('data-bs-nome')
+
+            var modalBodyDiv = exampleModal.querySelector('.modal-body div')
+
+            modalBodyDiv.innerHTML = "Você quer realmente excluir <b>" + nome + "?</b>" + 
+            "<br> Não será possível resgatar a Manutenção (" + nome + ") após a confirmação";
+
+
+            var modalFooterLink = exampleModal.querySelector('.modal-footer a');
+
+            modalFooterLink.href = "/ManutencaoVeiculo/Delete?valor=" + id;
+
+
+        })
+    </script>
+}

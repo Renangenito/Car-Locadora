@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using ProjetoCarLocadora.Front.Servico;
@@ -73,9 +74,12 @@ namespace ProjetoCarLocadora.Front.Controllers
 
         }
 
+        
+
         // GET: ClienteController/Create
         public ActionResult Create()
         {
+            ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
             return View();
         }
 
@@ -122,6 +126,42 @@ namespace ProjetoCarLocadora.Front.Controllers
             }
         }
 
+        private List<SelectListItem> CarregarCategoriasDeVeiculos()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
+
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterTodasCategoria").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string conteudo = response.Content.ReadAsStringAsync().Result;
+                List<CategoriaModel> categorias = JsonConvert.DeserializeObject<List<CategoriaModel>>(conteudo);
+
+                foreach (var linha in categorias)
+                {
+                    lista.Add(new SelectListItem()
+                    {
+                        Value = linha.Id.ToString(),
+                        Text = linha.Descricao,
+                        Selected = false,
+                    });
+                }
+
+                return lista;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
+
+
+
         // GET: ClienteController/Edit/5
         public ActionResult Edit(string valor)
         {
@@ -135,6 +175,9 @@ namespace ProjetoCarLocadora.Front.Controllers
 
             if (response.IsSuccessStatusCode)
             {
+
+                ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+
                 string conteudo = response.Content.ReadAsStringAsync().Result;
                 return View(JsonConvert.DeserializeObject<VeiculoModel>(conteudo));
             }
