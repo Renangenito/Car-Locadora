@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MzR8TodfwVCLI8ngdjaoCi8Mc4ZG7hNMHrFKJ4a/xyRScuhOm0BBWwoVMxnC07oSLSjiL+tzgxmXPfxeN8yKxA==",
+  "dgSpecHash": "NdtOdR+v+7HcQoSji76ABfzhQXiiSXuCWdFOgnkiEZoBqj1/LwJS4LFlz+vZ3Os+K4kXc9neGWp1Jr2vxSTCIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
+  "projectFilePath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Renan\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

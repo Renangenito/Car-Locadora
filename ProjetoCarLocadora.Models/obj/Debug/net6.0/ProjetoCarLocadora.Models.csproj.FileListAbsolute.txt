@@ -10,3 +10,15 @@ C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Models\obj\Debug\net6.0\refint\ProjetoCarLocadora.Models.dll
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.pdb
 C:\Users\Renan\Desktop\Projeto-Car-Locador\ProjetoCarLocadora\ProjetoCarLocadora.Models\obj\Debug\net6.0\ref\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\bin\Debug\net6.0\ProjetoCarLocadora.Models.deps.json
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\bin\Debug\net6.0\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\bin\Debug\net6.0\ProjetoCarLocadora.Models.pdb
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.csproj.AssemblyReference.cache
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.AssemblyInfoInputs.cache
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.AssemblyInfo.cs
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.csproj.CoreCompileInputs.cache
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\refint\ProjetoCarLocadora.Models.dll
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ProjetoCarLocadora.Models.pdb
+C:\Users\Renan\Desktop\Locadora_de-Carro\ProjetoCarLocadora.Models\obj\Debug\net6.0\ref\ProjetoCarLocadora.Models.dll

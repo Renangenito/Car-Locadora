@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj": {}
+    "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj": {
+    "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
+        "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
         "projectName": "ProjetoCarLocadora.Front",
-        "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
+        "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\ProjetoCarLocadora.Front.csproj",
         "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Front\\obj\\",
+        "outputPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Front\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
-                "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj"
+              "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
+                "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
+    "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
         "projectName": "ProjetoCarLocadora.Models",
-        "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
+        "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
         "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\obj\\",
+        "outputPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",

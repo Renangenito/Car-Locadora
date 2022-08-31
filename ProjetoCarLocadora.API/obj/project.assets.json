@@ -2269,11 +2269,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.API\\ProjetoCarLocadora.API.csproj",
+      "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.API\\ProjetoCarLocadora.API.csproj",
       "projectName": "ProjetoCarLocadora.API",
-      "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.API\\ProjetoCarLocadora.API.csproj",
+      "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.API\\ProjetoCarLocadora.API.csproj",
       "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.API\\obj\\",
+      "outputPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2290,11 +2290,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
-              "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj"
+            "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj": {
+              "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj"
             },
-            "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Negocios\\ProjetoCarLocadora.Negocios.csproj": {
-              "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Negocios\\ProjetoCarLocadora.Negocios.csproj"
+            "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Negocios\\ProjetoCarLocadora.Negocios.csproj": {
+              "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Negocios\\ProjetoCarLocadora.Negocios.csproj"
             }
           }
         }

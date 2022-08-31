@@ -12,6 +12,8 @@ using System.Security.Cryptography;
 using Microsoft.IdentityModel.Tokens;
 using AspNetCoreRateLimit;
 using ProjetoCarLocadora.Negocios.ManutencaoVeiculo;
+using ProjetoCarLocadora.Negocios.Vistoria;
+using ProjetoCarLocadora.Negocios.Locacao;
 
 namespace ProjetoCarLocadora.API.Extensoes
 {
@@ -96,6 +98,11 @@ namespace ProjetoCarLocadora.API.Extensoes
             services.AddScoped<IFormaPagamento, FormaPagamento>();
             services.AddScoped<IUsuario, Usuario>();
             services.AddScoped<IManutencaoVeiculo, ManutencaoVeiculo>();
+            services.AddScoped<IVistoria, Vistoria>();
+            services.AddScoped<ILocacao, Locacao>();
+
+
+
         }
 
         //public static void ConfigureRateLimitingOptions(this IServiceCollection services)

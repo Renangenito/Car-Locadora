@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
       "projectName": "ProjetoCarLocadora.Models",
-      "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
+      "projectPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\ProjetoCarLocadora.Models.csproj",
       "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Renan\\Desktop\\Projeto-Car-Locador\\ProjetoCarLocadora\\ProjetoCarLocadora.Models\\obj\\",
+      "outputPath": "C:\\Users\\Renan\\Desktop\\Locadora_de-Carro\\ProjetoCarLocadora.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",

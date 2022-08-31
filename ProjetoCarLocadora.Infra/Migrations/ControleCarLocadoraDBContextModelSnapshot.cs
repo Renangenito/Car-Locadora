@@ -145,6 +145,56 @@ namespace ProjetoCarLocadora.Infra.Migrations
                     b.ToTable("FormasDePagamento");
                 });
 
+            modelBuilder.Entity("ProjetoCarLocadora.Models.Models.LocacaoModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClienteCPF")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<DateTime?>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraDevolucaoPrevista")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraReserva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraRetiradaPrevista")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInclusao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FormaPagamentoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VeiculoPlaca")
+                        .HasColumnType("nvarchar(8)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.HasIndex("ClienteCPF");
+
+                    b.HasIndex("FormaPagamentoId");
+
+                    b.HasIndex("VeiculoPlaca");
+
+                    b.ToTable("Locacao");
+                });
+
             modelBuilder.Entity("ProjetoCarLocadora.Models.Models.ManutencaoVeiculoModel", b =>
                 {
                     b.Property<int>("Id")
@@ -307,6 +357,93 @@ namespace ProjetoCarLocadora.Infra.Migrations
                     b.ToTable("Veiculos");
                 });
 
+            modelBuilder.Entity("ProjetoCarLocadora.Models.Models.VistoriaModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CombustivelEntrada")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CombustivelSaida")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataHoraDevolucaoPatio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraRetiradaPatio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInclusao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("KmEntrada")
+                        .IsRequired()
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("KmSaida")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("LocacoesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ObservacaoEntrada")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("ObservacaoSaida")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocacoesId");
+
+                    b.ToTable("Vistoria");
+                });
+
+            modelBuilder.Entity("ProjetoCarLocadora.Models.Models.LocacaoModel", b =>
+                {
+                    b.HasOne("ProjetoCarLocadora.Models.Models.CategoriaModel", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoCarLocadora.Models.Models.ClienteModel", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteCPF")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoCarLocadora.Models.Models.FormaDePagamentoModel", "FormaPagamento")
+                        .WithMany()
+                        .HasForeignKey("FormaPagamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoCarLocadora.Models.Models.VeiculoModel", "Veiculo")
+                        .WithMany()
+                        .HasForeignKey("VeiculoPlaca");
+
+                    b.Navigation("Categoria");
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("FormaPagamento");
+
+                    b.Navigation("Veiculo");
+                });
+
             modelBuilder.Entity("ProjetoCarLocadora.Models.Models.ManutencaoVeiculoModel", b =>
                 {
                     b.HasOne("ProjetoCarLocadora.Models.Models.VeiculoModel", "Veiculo")
@@ -325,6 +462,17 @@ namespace ProjetoCarLocadora.Infra.Migrations
                         .HasForeignKey("CategoriaId");
 
                     b.Navigation("Categoria");
+                });
+
+            modelBuilder.Entity("ProjetoCarLocadora.Models.Models.VistoriaModel", b =>
+                {
+                    b.HasOne("ProjetoCarLocadora.Models.Models.LocacaoModel", "Locacoes")
+                        .WithMany()
+                        .HasForeignKey("LocacoesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Locacoes");
                 });
 #pragma warning restore 612, 618
         }
