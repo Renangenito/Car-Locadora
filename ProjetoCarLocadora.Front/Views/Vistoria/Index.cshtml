@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ProjetoCarLocadora.Models.Models.VistoriaModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocacoesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KmSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CombustivelSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObservacaoSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataHoraRetiradaPatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KmEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CombustivelEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObservacaoEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataHoraDevolucaoPatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocacoesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KmSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CombustivelSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacaoSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataHoraRetiradaPatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KmEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CombustivelEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacaoEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataHoraDevolucaoPatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAlteracao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
