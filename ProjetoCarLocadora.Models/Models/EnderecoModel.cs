@@ -10,6 +10,7 @@ namespace ProjetoCarLocadora.Models.Models
 
         [Required(ErrorMessage = "O Numero é obrigatório!")]
         [StringLength(20, MinimumLength = 1, ErrorMessage = "Este campo deve ter no mínimo 1 e no máximo 20 caracteres!")]
+        [Display(Name = "Número")]
         public string Numero { get; set; } = "";
 
         public string? Complemento { get; set; }

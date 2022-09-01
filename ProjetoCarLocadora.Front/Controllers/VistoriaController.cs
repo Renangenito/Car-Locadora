@@ -74,7 +74,7 @@ namespace ProjetoCarLocadora.Front.Controllers
         // GET: ClienteController/Create
         public ActionResult Create()
         {
-            ViewBag.Locacao = Locacao();
+            ViewBag.Locacao = CarregarLocacoes().Result;
             return View();
         }
 
@@ -136,7 +136,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             if (response.IsSuccessStatusCode)
             {
 
-                ViewBag.CarregarLocacao = Locacao();
+                ViewBag.Locacao = CarregarLocacoes().Result;
                 string conteudo = response.Content.ReadAsStringAsync().Result;
                 return View(JsonConvert.DeserializeObject<VistoriaModel>(conteudo));
             }
@@ -200,7 +200,7 @@ namespace ProjetoCarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao/ObterToadasLocacoes").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao/ObterTodasLocacoes").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -213,6 +213,44 @@ namespace ProjetoCarLocadora.Front.Controllers
                     {
                         Value = linha.Id.ToString(),
                         Text = linha.Id.ToString(),
+                        Selected = false,
+                    });
+                }
+
+                return lista;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
+
+
+
+
+
+
+        private async Task<List<SelectListItem>> CarregarLocacoes()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",  _apiToken.Obter());
+
+            HttpResponseMessage response = await client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao/ObterTodasLocacoes");
+
+            if (response.IsSuccessStatusCode)
+            {
+                List<LocacaoModel> locacoes = JsonConvert.DeserializeObject<List<LocacaoModel>>(response.Content.ReadAsStringAsync().Result);
+
+                foreach (var linha in locacoes)
+                {
+                    lista.Add(new SelectListItem()
+                    {
+                        Value = linha.Id.ToString(),
+                        Text = linha.VeiculoPlaca + " - " + linha.ClienteCPF,
                         Selected = false,
                     });
                 }

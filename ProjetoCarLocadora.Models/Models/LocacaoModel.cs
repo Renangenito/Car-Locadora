@@ -15,28 +15,21 @@ namespace ProjetoCarLocadora.Models.Models
 
         [StringLength(14, MinimumLength = 14, ErrorMessage = "Este campo deve ter 14 caracteres")]
         [Required(ErrorMessage = "CPF do cliente é obrigatório.")]
+        [Display(Name = "Cpf do Cliente")]
         public string ClienteCPF { get; set; }
         public ClienteModel? Cliente { get; set; }
 
 
 
         [Required(ErrorMessage = "Forma de pagamento é obrigatório.")]
+        [Display(Name = "Forma Pagamento")]
+
         public int FormaPagamentoId { get; set; }
         public FormaDePagamentoModel? FormaPagamento { get; set; }
 
-
-
-        [Required(ErrorMessage = "categoria é obrigatório.")]
-        public int CategoriaId { get; set; }
-        public CategoriaModel? Categoria { get; set; }
-
-
-
-
-        [Display(Name = "Placa do veiculo")]
+        [Display(Name = "Placa do veículo")]
         public string? VeiculoPlaca { get; set; }
         public VeiculoModel? Veiculo { get; set; }
-
 
         [Required(ErrorMessage = "Data da reserva é obrigatório.")]
         [Display(Name = " Data da reserva")]

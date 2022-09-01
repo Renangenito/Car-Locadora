@@ -87,6 +87,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Locacao/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Locacao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Locacao/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -157,6 +165,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Vistoria/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Vistoria/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Vistoria/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Renan/Desktop/Locadora_de-Carro/ProjetoCarLocadora.Front/Views/Vistoria/Index.cshtml]

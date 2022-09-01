@@ -12,12 +12,12 @@ namespace ProjetoCarLocadora.Models.Models
         [Key]
         [Required]
         public int Id { get; set; }
-
+        [Display(Name = "Locações")]
         public int LocacoesId { get; set; }
         public LocacaoModel? Locacoes { get; set; }
 
         [Required(ErrorMessage = "KM Saida é obrigatorio")]
-        [Display(Name = "KM de saida")]
+        [Display(Name = "KM de saída")]
         public long KmSaida { get; set; }
 
         [StringLength(50, ErrorMessage = "Este campo deve ter no maximo 50 caracteres")]
@@ -27,7 +27,7 @@ namespace ProjetoCarLocadora.Models.Models
 
 
         [StringLength(2000, ErrorMessage = "Este campo deve ter no maximo 2000 caracteres")]
-        [Display(Name = "Observação de saida")]
+        [Display(Name = "Observação de saída")]
         public string? ObservacaoSaida { get; set; }
 
 

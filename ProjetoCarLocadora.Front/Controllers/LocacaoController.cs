@@ -74,10 +74,9 @@ namespace ProjetoCarLocadora.Front.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.CarregarLocacao = LocacaoCPF();
-            ViewBag.CarregarFormaPagamento = FormaDePagamento();
-            ViewBag.CarregarCategoria = Categoria();
-            ViewBag.CarregarVeiculoPlaca = VeiculoPlaca();
+            ViewBag.Veiculos = CarregarVeiculos().Result;
+            ViewBag.Clientes = CarregarClientes().Result;
+            ViewBag.FormaDePagamento = CarregarFormaDePagamento().Result;
             return View();
         }
        
@@ -113,11 +112,7 @@ namespace ProjetoCarLocadora.Front.Controllers
                 }
                 else
                 {
-                    ViewBag.Locacao = LocacaoCPF();
-                    ViewBag.FormaDePagamento = FormaDePagamento();
-                    ViewBag.Categoria = Categoria();
-                    ViewBag.VeiculoPlaca = VeiculoPlaca();
-
+                   
                     TempData["erro"] = "Algum campo deve estar faltando preenchimento";
                     return View();
                 }
@@ -143,10 +138,9 @@ namespace ProjetoCarLocadora.Front.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                ViewBag.CarregarLocacao = LocacaoCPF();
-                ViewBag.CarregarFormaPagamento = FormaDePagamento();
-                ViewBag.CarregarCategoria = Categoria();
-                ViewBag.CarregarVeiculoPlaca = VeiculoPlaca();
+                ViewBag.Veiculos = CarregarVeiculos().Result;
+                ViewBag.Clientes = CarregarClientes().Result;
+                ViewBag.FormaDePagamento = CarregarFormaDePagamento().Result;
                 string conteudo = response.Content.ReadAsStringAsync().Result;
                 return View(JsonConvert.DeserializeObject<LocacaoModel>(conteudo));
             }
@@ -186,10 +180,9 @@ namespace ProjetoCarLocadora.Front.Controllers
                 }
                 else
                 {
-                    ViewBag.CarregarLocacao = LocacaoCPF();
-                    ViewBag.CarregarFormaPagamento = FormaDePagamento();
-                    ViewBag.CarregarCategoria = Categoria();
-                    ViewBag.CarregarVeiculoPlaca = VeiculoPlaca();
+                    ViewBag.Veiculos = CarregarVeiculos().Result;
+                    ViewBag.Clientes = CarregarClientes().Result;
+                    ViewBag.FormaDePagamento = CarregarFormaDePagamento().Result;
                     TempData["erro"] = "Algum campo deve estar faltando preenchimento";
                     return View();
                 }
@@ -203,14 +196,44 @@ namespace ProjetoCarLocadora.Front.Controllers
 
 
 
-
-        ///aqaq\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+        //////////////////////////////AQUI//////////////////////////////
 
 
 
+        private async Task<List<SelectListItem>> CarregarVeiculos()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
 
-        private List<SelectListItem> LocacaoCPF()
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",  _apiToken.Obter());
+
+            HttpResponseMessage response = await client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo");
+
+            if (response.IsSuccessStatusCode)
+            {
+                List<VeiculoModel> veiculos = JsonConvert.DeserializeObject<List<VeiculoModel>>( response.Content.ReadAsStringAsync().Result);
+
+                foreach (var linha in veiculos)
+                {
+                    lista.Add(new SelectListItem()
+                    {
+                        Value = linha.Placa,
+                        Text = linha.Modelo + " - " + linha.Marca,
+                        Selected = false,
+                    });
+                }
+
+                return lista;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
+
+        private async Task<List<SelectListItem>> CarregarClientes()
         {
             List<SelectListItem> lista = new List<SelectListItem>();
 
@@ -219,19 +242,17 @@ namespace ProjetoCarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterTodosClientes").Result;
-
+            HttpResponseMessage response = await client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterTodosClientes");
             if (response.IsSuccessStatusCode)
             {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                List<ClienteModel> locacao = JsonConvert.DeserializeObject<List<ClienteModel>>(conteudo);
+                List<ClienteModel> Clientes = JsonConvert.DeserializeObject<List<ClienteModel>>(response.Content.ReadAsStringAsync().Result);
 
-                foreach (var linha in locacao)
+                foreach (var linha in Clientes)
                 {
                     lista.Add(new SelectListItem()
                     {
                         Value = linha.Cpf,
-                        Text = linha.Nome,
+                        Text = linha.Nome + " - " + linha.Cpf,
                         Selected = false,
                     });
                 }
@@ -243,94 +264,28 @@ namespace ProjetoCarLocadora.Front.Controllers
                 throw new Exception(response.ReasonPhrase);
             }
         }
-        private List<SelectListItem> FormaDePagamento()
+
+        private async Task<List<SelectListItem>> CarregarFormaDePagamento()
         {
             List<SelectListItem> lista = new List<SelectListItem>();
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",  _apiToken.Obter());
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento").Result;
-
+            HttpResponseMessage response = await client.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormaDePagamento");
+            
             if (response.IsSuccessStatusCode)
             {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                List<FormaDePagamentoModel> Pagamento = JsonConvert.DeserializeObject<List<FormaDePagamentoModel>>(conteudo);
+                List<FormaDePagamentoModel> formasPagamento = JsonConvert.DeserializeObject<List<FormaDePagamentoModel>>( response.Content.ReadAsStringAsync().Result);
 
-                foreach (var linha in Pagamento)
+                foreach (var linha in formasPagamento)
                 {
                     lista.Add(new SelectListItem()
                     {
                         Value = linha.Id.ToString(),
                         Text = linha.Descricao,
-                        Selected = false,
-                    });
-                }
-
-                return lista;
-            }
-            else
-            {
-                throw new Exception(response.ReasonPhrase);
-            }
-        }
-        private List<SelectListItem> Categoria()
-        {
-            List<SelectListItem> lista = new List<SelectListItem>();
-
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterTodasCategoria").Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                List<CategoriaModel> Categoria = JsonConvert.DeserializeObject<List<CategoriaModel>>(conteudo);
-
-                foreach (var linha in Categoria)
-                {
-                    lista.Add(new SelectListItem()
-                    {
-                        Value = linha.Id.ToString(),
-                        Text = linha.Descricao,
-                        Selected = false,
-                    });
-                }
-
-                return lista;
-            }
-            else
-            {
-                throw new Exception(response.ReasonPhrase);
-            }
-        }
-        private List<SelectListItem> VeiculoPlaca()
-        {
-            List<SelectListItem> lista = new List<SelectListItem>();
-
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo").Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                List<VeiculoModel> Veiculos = JsonConvert.DeserializeObject<List<VeiculoModel>>(conteudo);
-
-                foreach (var linha in Veiculos)
-                {
-                    lista.Add(new SelectListItem()
-                    {
-                        Value = linha.Placa.ToString(),
-                        Text = linha.Placa,
                         Selected = false,
                     });
                 }

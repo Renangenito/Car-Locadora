@@ -11,6 +11,8 @@ namespace ProjetoCarLocadora.Models.Models
 
         [Required(ErrorMessage = "A descrição é obrigatória!")]
         [StringLength(150, MinimumLength = 1, ErrorMessage = "Este campo deve ter no mínimo 1 e no máximo 150 caracteres!")]
+        [Display(Name = "Descrição")]
+
         public string Descricao { get; set; } = "";
 
         [Required(ErrorMessage = "A data de inclusão é obrigatória!")]
