@@ -2,6 +2,7 @@
 {
     public interface IApiToken
     {
-         string Obter();
+        
+         Task<string> Obter();
     }
 }

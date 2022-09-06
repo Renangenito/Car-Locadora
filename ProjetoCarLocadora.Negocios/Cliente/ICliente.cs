@@ -9,11 +9,11 @@ namespace ProjetoCarLocadora.Negocios.Cliente
 {
     public interface ICliente
     {
-        List<ClienteModel> ListaClientes();
-        ClienteModel ObterUmCliente(string cpf);
-        void IncluirCliente(ClienteModel clientesModel);
-        void AlterarCliente(ClienteModel clientesModel);
-        void ExcluirCliente(string cpf);
+        Task<List<ClienteModel>> ListaClientes();
+        Task<ClienteModel> ObterUmCliente(string cpf);
+        Task IncluirCliente(ClienteModel clientesModel);
+        Task AlterarCliente(ClienteModel clientesModel);
+        Task ExcluirCliente(string cpf);
 
     }
 }

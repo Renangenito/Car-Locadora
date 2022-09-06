@@ -23,33 +23,33 @@ namespace ProjetoCarLocadora.API.Controllers
         public async Task<List<VistoriaModel>> Get()
         {
 
-            return _vistoria.ListaVistorias();
+            return await _vistoria.ListaVistorias();
 
         }
 
 
         [HttpGet("ObterDadosVistoria")]
 
-        public VistoriaModel Get([FromQuery] int id)
+        public async Task<VistoriaModel> Get([FromQuery] int id)
         {
 
-            return _vistoria.ObterUmaVistoria(id);
+            return await _vistoria.ObterUmaVistoria(id);
         }
 
         [HttpPost()]
-        public void Post([FromBody] VistoriaModel vistoriaModel)
+        public async Task Post([FromBody] VistoriaModel vistoriaModel)
         {
             vistoriaModel.DataInclusao = DateTime.Now;
             vistoriaModel.DataAlteracao = null;
-            _vistoria.IncluirVistoria(vistoriaModel);
+            await _vistoria.IncluirVistoria(vistoriaModel);
         }
 
 
         [HttpPut()]
-        public void Put([FromBody] VistoriaModel vistoriaModel)
+        public async Task Put([FromBody] VistoriaModel vistoriaModel)
         {
             vistoriaModel.DataAlteracao = DateTime.Now;
-            _vistoria.AlterarVistoria(vistoriaModel);
+            await _vistoria.AlterarVistoria(vistoriaModel);
         }
     }
 }

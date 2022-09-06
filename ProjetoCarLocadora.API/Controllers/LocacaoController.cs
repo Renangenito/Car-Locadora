@@ -24,33 +24,33 @@ namespace ProjetoCarLocadora.API.Controllers
         public async Task<List<LocacaoModel>> Get()
         {
 
-            return _locacao.ListaLocacoes();
+            return await _locacao.ListaLocacoes();
 
         }
 
 
         [HttpGet("ObterDadosLocacao")]
 
-        public LocacaoModel Get([FromQuery] int id)
+        public async Task<LocacaoModel> Get([FromQuery] int id)
         {
 
-            return _locacao.ObterUmaLocacao(id);
+            return await _locacao.ObterUmaLocacao(id);
         }
 
         [HttpPost()]
-        public void Post([FromBody] LocacaoModel locacaoModel)
+        public async Task Post([FromBody] LocacaoModel locacaoModel)
         {
             locacaoModel.DataInclusao = DateTime.Now;
             locacaoModel.DataAlteracao = null;
-            _locacao.IncluirLocacao(locacaoModel);
+            await _locacao.IncluirLocacao(locacaoModel);
         }
 
 
         [HttpPut()]
-        public void Put([FromBody] LocacaoModel locacaoModel)
+        public async Task Put([FromBody] LocacaoModel locacaoModel)
         {
             locacaoModel.DataAlteracao = DateTime.Now;
-            _locacao.AlterarLocacao(locacaoModel);
+            await _locacao.AlterarLocacao(locacaoModel);
         }
     }
 }

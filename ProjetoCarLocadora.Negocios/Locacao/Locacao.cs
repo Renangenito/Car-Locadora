@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 using System;
 using System.Collections.Generic;
@@ -19,24 +20,24 @@ namespace ProjetoCarLocadora.Negocios.Locacao
 
 
 
-        public List<LocacaoModel> ListaLocacoes()
+        public async Task<List<LocacaoModel>> ListaLocacoes()
         {
-            return _entityContext.Locacao.OrderBy(x => x.Id).ToList();
+            return await _entityContext.Locacao.OrderBy(x => x.Id).ToListAsync();
         }
-        public LocacaoModel ObterUmaLocacao(int valor)
+        public async Task<LocacaoModel> ObterUmaLocacao(int valor)
         {
-            return _entityContext.Locacao.Single(x => x.Id.Equals(valor));
+            return await _entityContext.Locacao.SingleAsync(x => x.Id.Equals(valor));
 
         }
-        public void AlterarLocacao(LocacaoModel locacaoModel)
+        public async Task AlterarLocacao(LocacaoModel locacaoModel)
         {
             _entityContext.Locacao.Update(locacaoModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
-        public void IncluirLocacao(LocacaoModel locacaoModel)
+        public async Task IncluirLocacao(LocacaoModel locacaoModel)
         {
             _entityContext.Locacao.Add(locacaoModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
     }

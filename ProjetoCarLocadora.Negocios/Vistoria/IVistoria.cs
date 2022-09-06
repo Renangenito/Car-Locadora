@@ -9,9 +9,9 @@ namespace ProjetoCarLocadora.Negocios.Vistoria
 {
     public interface IVistoria
     {
-        List<VistoriaModel> ListaVistorias();
-        VistoriaModel ObterUmaVistoria(int valor);
-        void AlterarVistoria(VistoriaModel vistoriaModel);
-        void IncluirVistoria(VistoriaModel vistoriaModel);
+        Task<List<VistoriaModel>> ListaVistorias();
+        Task<VistoriaModel> ObterUmaVistoria(int valor);
+        Task AlterarVistoria(VistoriaModel vistoriaModel);
+        Task IncluirVistoria(VistoriaModel vistoriaModel);
     }
 }

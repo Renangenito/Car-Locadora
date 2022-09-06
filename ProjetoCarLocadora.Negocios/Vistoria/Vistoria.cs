@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 using System;
 using System.Collections.Generic;
@@ -19,24 +20,24 @@ namespace ProjetoCarLocadora.Negocios.Vistoria
 
 
 
-        public List<VistoriaModel> ListaVistorias()
+        public async Task<List<VistoriaModel>> ListaVistorias()
         {
-            return _entityContext.Vistoria.OrderBy(x => x.Id).ToList();
+            return await _entityContext.Vistoria.OrderBy(x => x.Id).ToListAsync();
         }
-        public VistoriaModel ObterUmaVistoria(int valor)
+        public async Task<VistoriaModel> ObterUmaVistoria(int valor)
         {
-            return _entityContext.Vistoria.Single(x => x.Id.Equals(valor));
+            return await _entityContext.Vistoria.SingleAsync(x => x.Id.Equals(valor));
 
         }
-        public void AlterarVistoria(VistoriaModel vistoriaModel)
+        public async Task AlterarVistoria(VistoriaModel vistoriaModel)
         {
             _entityContext.Vistoria.Update(vistoriaModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
-        public void IncluirVistoria(VistoriaModel vistoriaModel)
+        public async Task IncluirVistoria(VistoriaModel vistoriaModel)
         {
             _entityContext.Vistoria.Add(vistoriaModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
      

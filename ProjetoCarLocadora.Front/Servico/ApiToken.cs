@@ -14,7 +14,7 @@ namespace ProjetoCarLocadora.Front.Servico
             _dadosBase = dadosbase;
             _loginRespostaModel = loginRespostaModel;
         }
-        private void ObterToken()
+        private async Task ObterToken()
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
@@ -24,7 +24,7 @@ namespace ProjetoCarLocadora.Front.Servico
             loginRequisicaoModel.Usuario = "UsuarioCarLocadora";
             loginRequisicaoModel.Senha = "SenhaCarLocadora";
 
-            HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel).Result;
+            HttpResponseMessage response = await client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -48,17 +48,17 @@ namespace ProjetoCarLocadora.Front.Servico
 
         }
 
-        public string Obter()
+        public async Task<string> Obter()
         {
             if (_loginRespostaModel.Value.Autenticado == false)
             {
-                ObterToken();
+               await ObterToken();
             }
             else
             {
                 if (DateTime.Now >= _loginRespostaModel.Value.DataExpiracao)
                 {
-                    ObterToken();
+                    await ObterToken();
                 }
             }
             return _loginRespostaModel.Value.Token;

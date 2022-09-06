@@ -24,17 +24,17 @@ namespace ProjetoCarLocadora.API.Controllers
         public async Task<List<ClienteModel>> Get()
         {
 
-            return _cliente.ListaClientes();
+            return await _cliente.ListaClientes();
 
         }
 
 
         [HttpGet("ObterDadosCliente")]
 
-        public ClienteModel Get([FromQuery] string cpf)
+        public async Task<ClienteModel> Get([FromQuery] string cpf)
         {
 
-            return _cliente.ObterUmCliente(cpf);
+            return await _cliente.ObterUmCliente(cpf);
         }
 
         [HttpPost()]
@@ -42,23 +42,23 @@ namespace ProjetoCarLocadora.API.Controllers
         {
             clienteModel.DataInclusao = DateTime.Now;
             clienteModel.DataAlteracao = null;
-            _cliente.IncluirCliente(clienteModel);
+            await _cliente.IncluirCliente(clienteModel);
         }
 
 
         [HttpPut()]
-        public void Put([FromBody] ClienteModel clienteModel)
+        public async Task Put([FromBody] ClienteModel clienteModel)
         {
             clienteModel.DataAlteracao = DateTime.Now;
-            _cliente.AlterarCliente(clienteModel);
+            await _cliente.AlterarCliente(clienteModel);
         }
 
         [HttpDelete()]
-        public void Delete([FromQuery] string cpf)
+        public async Task Delete([FromQuery] string cpf)
         {
 
             //Utilizando o Entity
-            _cliente.ExcluirCliente(cpf);
+            await _cliente.ExcluirCliente(cpf);
         }
 
     }

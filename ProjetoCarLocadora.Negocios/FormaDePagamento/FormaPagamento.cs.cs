@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 
 
@@ -13,26 +14,26 @@ namespace ProjetoCarLocadora.Negocios.FormaDePagamento
             _entityContext = entityContext;
         }
 
-        public void AlterarFormaPagamento(FormaDePagamentoModel formasDePagamentosModel)
+        public async Task AlterarFormaPagamento(FormaDePagamentoModel formasDePagamentosModel)
         {
             _entityContext.FormasDePagamento.Update(formasDePagamentosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public void IncluirFormaPagamento(FormaDePagamentoModel formasDePagamentosModel)
+        public async Task IncluirFormaPagamento(FormaDePagamentoModel formasDePagamentosModel)
         {
             _entityContext.FormasDePagamento.Add(formasDePagamentosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public List<FormaDePagamentoModel> ListaFormaPagamentos()
+        public async Task<List<FormaDePagamentoModel>> ListaFormaPagamentos()
         {
-            return _entityContext.FormasDePagamento.ToList();
+            return await _entityContext.FormasDePagamento.ToListAsync();
         }
 
-        public FormaDePagamentoModel ObterFormaPagamento(int valor)
+        public async Task<FormaDePagamentoModel> ObterFormaPagamento(int valor)
         {
-            return _entityContext.FormasDePagamento.Single(x => x.Id.Equals(valor));
+            return await _entityContext.FormasDePagamento.SingleAsync(x => x.Id.Equals(valor));
         }
     }
 }

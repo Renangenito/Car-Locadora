@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 using ProjetoCarLocadora.Negocios.Veiculo;
 using System;
@@ -18,26 +19,26 @@ namespace ProjetoCarLocadora.Negocios.Veiculo
             _entityContext = entityContext;
         }
 
-        public void AlterarVeiculos(VeiculoModel veiculosModel)
+        public async Task AlterarVeiculos(VeiculoModel veiculosModel)
         {
             _entityContext.Veiculos.Update(veiculosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public void IncluirVeiculos(VeiculoModel veiculosModel)
+        public async Task IncluirVeiculos(VeiculoModel veiculosModel)
         {
             _entityContext.Veiculos.Add(veiculosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public VeiculoModel ObterUmVeiculo(string valor)
+        public async Task<VeiculoModel> ObterUmVeiculo(string valor)
         {
-            return _entityContext.Veiculos.Single(x => x.Placa.Equals(valor));
+            return await _entityContext.Veiculos.SingleAsync(x => x.Placa.Equals(valor));
         }
 
-        public List<VeiculoModel> ListaVeiculos()
+        public async Task<List<VeiculoModel>> ListaVeiculos()
         {
-            return _entityContext.Veiculos.ToList();
+            return await _entityContext.Veiculos.ToListAsync();
         }
     }
 }

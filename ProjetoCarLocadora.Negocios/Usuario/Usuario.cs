@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 using ProjetoCarLocadora.Negocios.Usuario;
 using System;
@@ -18,26 +19,26 @@ namespace ProjetoCarLocadora.Negocios.Usuario
             _entityContext = entityContext;
         }
 
-        public void AlterarUsuario(UsuarioModel usuariosModel)
+        public async Task AlterarUsuario(UsuarioModel usuariosModel)
         {
             _entityContext.Usuarios.Update(usuariosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public void IncluirUsuario(UsuarioModel usuariosModel)
+        public async Task IncluirUsuario(UsuarioModel usuariosModel)
         {
             _entityContext.Usuarios.Add(usuariosModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public UsuarioModel ObterUmUsuario(string cpf)
+        public async Task<UsuarioModel> ObterUmUsuario(string cpf)
         {
-            return _entityContext.Usuarios.Single(x => x.Cpf.Equals(cpf));
+            return await _entityContext.Usuarios.SingleAsync(x => x.Cpf.Equals(cpf));
         }
 
-        public List<UsuarioModel> ListaUsuarios()
+        public async Task<List<UsuarioModel>> ListaUsuarios()
         {
-            return _entityContext.Usuarios.ToList();
+            return await _entityContext.Usuarios.ToListAsync();
         }
 
     }

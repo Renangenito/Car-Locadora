@@ -6,11 +6,11 @@ namespace ProjetoCarLocadora.Negocios.Categoria
     {
 
 
-        List<CategoriaModel> ListaCategorias();
-        CategoriaModel ObterUmaCategoria(int valor);
-        void AlterarCategoria(CategoriaModel categoriasModel);
-        void IncluirCategoria(CategoriaModel categoriasModel);
-        void ExcluirCategoria(int valor);
+        Task<List<CategoriaModel>> ListaCategorias();
+        Task<CategoriaModel> ObterUmaCategoria(int valor);
+        Task AlterarCategoria(CategoriaModel categoriasModel);
+        Task IncluirCategoria(CategoriaModel categoriasModel);
+        Task ExcluirCategoria(int valor);
         
 
     }

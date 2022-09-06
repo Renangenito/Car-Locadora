@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 using System;
 using System.Collections.Generic;
@@ -19,31 +20,31 @@ namespace ProjetoCarLocadora.Negocios.ManutencaoVeiculo
 
 
 
-        public List<ManutencaoVeiculoModel> ListaManutencaoVeiculo()
+        public async Task<List<ManutencaoVeiculoModel>> ListaManutencaoVeiculo()
         {
-            return _entityContext.ManutencaoVeiculo.OrderBy(x => x.Id).ToList();
+            return await _entityContext.ManutencaoVeiculo.OrderBy(x => x.Id).ToListAsync();
         }
-        public ManutencaoVeiculoModel ObterUmaListaManutencaoVeiculo(int valor)
+        public async Task<ManutencaoVeiculoModel> ObterUmaListaManutencaoVeiculo(int valor)
         {
-            return _entityContext.ManutencaoVeiculo.Single(x => x.Id.Equals(valor));
+            return await _entityContext.ManutencaoVeiculo.SingleAsync(x => x.Id.Equals(valor));
 
         }
-        public void AlterarListaManutencaoVeiculo(ManutencaoVeiculoModel manutencaoVeiculoModel)
+        public async Task AlterarListaManutencaoVeiculo(ManutencaoVeiculoModel manutencaoVeiculoModel)
         {
             _entityContext.ManutencaoVeiculo.Update(manutencaoVeiculoModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
-        public void IncluirListaManutencaoVeiculo(ManutencaoVeiculoModel manutencaoVeiculoModel)
+        public async Task IncluirListaManutencaoVeiculo(ManutencaoVeiculoModel manutencaoVeiculoModel)
         {
             _entityContext.ManutencaoVeiculo.Add(manutencaoVeiculoModel);
-            _entityContext.SaveChanges();
+            _entityContext.SaveChangesAsync();
         }
 
-        public void ExcluirListaManutencaoVeiculo(int valor)
+        public async Task ExcluirListaManutencaoVeiculo(int valor)
         {
             var id = _entityContext.ManutencaoVeiculo.Single(x => x.Id.Equals(valor));
             _entityContext.ManutencaoVeiculo.Remove(id);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
     }
 }

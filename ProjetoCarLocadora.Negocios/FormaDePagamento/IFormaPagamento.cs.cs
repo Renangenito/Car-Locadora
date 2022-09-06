@@ -10,9 +10,9 @@ namespace ProjetoCarLocadora.Negocios.FormaDePagamento
     public interface IFormaPagamento
     {
 
-        List<FormaDePagamentoModel> ListaFormaPagamentos();
-        FormaDePagamentoModel ObterFormaPagamento(int valor);
-        void IncluirFormaPagamento(FormaDePagamentoModel formasDePagamentosModel);
-        void AlterarFormaPagamento(FormaDePagamentoModel formasDePagamentosModel);
+        Task<List<FormaDePagamentoModel>> ListaFormaPagamentos();
+        Task<FormaDePagamentoModel> ObterFormaPagamento(int valor);
+        Task IncluirFormaPagamento(FormaDePagamentoModel formasDePagamentosModel);
+        Task AlterarFormaPagamento(FormaDePagamentoModel formasDePagamentosModel);
     }
 }

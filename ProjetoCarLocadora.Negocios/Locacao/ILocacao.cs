@@ -9,9 +9,9 @@ namespace ProjetoCarLocadora.Negocios.Locacao
 {
     public interface ILocacao
     {
-        List<LocacaoModel> ListaLocacoes();
-        LocacaoModel ObterUmaLocacao(int valor);
-        void AlterarLocacao(LocacaoModel locacaoModel);
-        void IncluirLocacao(LocacaoModel locacaoModel);
+        Task<List<LocacaoModel>> ListaLocacoes();
+        Task<LocacaoModel> ObterUmaLocacao(int valor);
+        Task AlterarLocacao(LocacaoModel locacaoModel);
+        Task IncluirLocacao(LocacaoModel locacaoModel);
     }
 }

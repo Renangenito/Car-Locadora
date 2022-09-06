@@ -25,41 +25,41 @@ namespace ProjetoCarLocadora.API.Controllers
         public async Task<List<CategoriaModel>> Get()
         {
 
-            return _categoria.ListaCategorias();
+            return await _categoria.ListaCategorias();
 
         }
 
 
         [HttpGet("ObterDadosCategoria")]
 
-        public CategoriaModel Get([FromQuery] int id)
+        public async Task<CategoriaModel> Get([FromQuery] int id)
         {
 
-            return _categoria.ObterUmaCategoria(id);
+            return await _categoria.ObterUmaCategoria(id);
         }
 
         [HttpPost()]
-        public void Post([FromBody] CategoriaModel categoriaModel)
+        public async Task Post([FromBody] CategoriaModel categoriaModel)
         {
             categoriaModel.DataInclusao = DateTime.Now;
             categoriaModel.DataAlteracao = null;
-            _categoria.IncluirCategoria(categoriaModel);
+            await _categoria.IncluirCategoria(categoriaModel);
         }
 
 
         [HttpPut()]
-        public void Put([FromBody] CategoriaModel categoriaModel)
+        public async Task Put([FromBody] CategoriaModel categoriaModel)
         {
             categoriaModel.DataAlteracao = DateTime.Now;
-            _categoria.AlterarCategoria(categoriaModel);
+            await _categoria.AlterarCategoria(categoriaModel);
         }
 
         [HttpDelete()]
-        public void Delete([FromQuery] int id)
+        public async Task Delete([FromQuery] int id)
         {
 
             //Utilizando o Entity
-            _categoria.ExcluirCategoria(id);
+           await _categoria.ExcluirCategoria(id);
         }
 
     }

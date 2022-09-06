@@ -1,4 +1,5 @@
-﻿using ProjetoCarLocadora.Infra.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
 
 
@@ -17,27 +18,27 @@ namespace ProjetoCarLocadora.Negocios.Categoria
       
 
 
-        public List<CategoriaModel> ListaCategorias()
+        public async Task<List<CategoriaModel>> ListaCategorias()
         {
-            return _entityContext.Categorias.OrderBy(x => x.Id).ToList();
+            return await _entityContext.Categorias.OrderBy(x => x.Id).ToListAsync();
         }
-        public CategoriaModel ObterUmaCategoria(int valor)
+        public async Task<CategoriaModel> ObterUmaCategoria(int valor)
         {
-            return _entityContext.Categorias.Single(x => x.Id.Equals(valor));
+            return await _entityContext.Categorias.SingleAsync(x => x.Id.Equals(valor));
             
         }
-        public void AlterarCategoria(CategoriaModel categoriasModel)
+        public async Task AlterarCategoria(CategoriaModel categoriasModel)
         {
             _entityContext.Categorias.Update(categoriasModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
-        public void IncluirCategoria(CategoriaModel categoriasModel)
+        public async Task IncluirCategoria(CategoriaModel categoriasModel)
         {
-            _entityContext.Categorias.Add(categoriasModel);
-            _entityContext.SaveChanges();
+            _entityContext.Categorias.AddAsync(categoriasModel);
+            await _entityContext.SaveChangesAsync();
         }
 
-        public void ExcluirCategoria(int valor)
+        public async Task ExcluirCategoria(int valor)
         {
             var id = _entityContext.Categorias.Single(x => x.Id.Equals(valor));
             _entityContext.Categorias.Remove(id);

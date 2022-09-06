@@ -13,14 +13,8 @@
 
 
             <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Id" style="color: #563d7c;" class="control-label fw-bold"></label>
-                        <input asp-for="Id" class="form-control" />
-                        <span asp-validation-for="Id" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                
+                <div class="col-md-12">
                     <div class="form-group">
                         <label asp-for="VeiculoPlaca" style="color: #563d7c;" class="control-label fw-bold"></label>
                         <select asp-for="VeiculoPlaca" asp-items="ViewBag.Veiculos" class="form-control text-uppercase">
@@ -62,22 +56,7 @@
                 </div>
             </div>
 
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="DataInclusao" style="color: #563d7c;" class="control-label fw-bold"></label>
-                        <input asp-for="DataInclusao" class="form-control" />
-                        <span asp-validation-for="DataInclusao" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="DataAlteracao" style="color: #563d7c;" class="control-label fw-bold"></label>
-                        <input asp-for="DataAlteracao" class="form-control" />
-                        <span asp-validation-for="DataAlteracao" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
+           
             <div class="form-group mt-2 mb-2 d-flex justify-content-between">
                 <div>
                     <a class="btn btn-outline-primary float-right" asp-action="Index"> < Voltar para a lista</a>

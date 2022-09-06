@@ -9,9 +9,9 @@ namespace ProjetoCarLocadora.Negocios.Usuario
 {
     public interface IUsuario
     {
-        List<UsuarioModel> ListaUsuarios();
-        UsuarioModel ObterUmUsuario(string cpf);
-        void IncluirUsuario(UsuarioModel usuariosModel);
-        void AlterarUsuario(UsuarioModel usuariosModel);
+        Task<List<UsuarioModel>> ListaUsuarios();
+        Task<UsuarioModel> ObterUmUsuario(string cpf);
+        Task IncluirUsuario(UsuarioModel usuariosModel);
+        Task AlterarUsuario(UsuarioModel usuariosModel);
     }
 }

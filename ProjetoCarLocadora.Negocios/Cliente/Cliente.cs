@@ -1,6 +1,7 @@
 ﻿using ProjetoCarLocadora.Negocios.Cliente;
 using ProjetoCarLocadora.Infra.Entity;
 using ProjetoCarLocadora.Models.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjetoCarLocadora.Negocios.Cliente
 {
@@ -15,32 +16,32 @@ namespace ProjetoCarLocadora.Negocios.Cliente
             _entityContext = entityContext;
         }
 
-        public void AlterarCliente(ClienteModel clientesModel)
+        public async Task AlterarCliente(ClienteModel clientesModel)
         {
             _entityContext.Clientes.Update(clientesModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
 
-        public void IncluirCliente(ClienteModel clientesModel)
+        public async Task IncluirCliente(ClienteModel clientesModel)
         {
             _entityContext.Clientes.Add(clientesModel);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }  
-        public List<ClienteModel> ListaClientes()
+        public async Task<List<ClienteModel>> ListaClientes()
         {
-           return _entityContext.Clientes.OrderBy(nome => nome.Nome).ToList();
+           return await _entityContext.Clientes.OrderBy(nome => nome.Nome).ToListAsync();
         }
 
-        public ClienteModel ObterUmCliente(string cpf)
+        public async Task<ClienteModel> ObterUmCliente(string cpf)
         {
-            return _entityContext.Clientes.Single(x => x.Cpf.Equals(cpf));
+            return await _entityContext.Clientes.SingleAsync(x => x.Cpf.Equals(cpf));
         }
 
-        public void ExcluirCliente(string cpf)
+        public async Task ExcluirCliente(string cpf)
         {
             var cpfCliente = _entityContext.Clientes.Single(x => x.Cpf.Equals(cpf));
             _entityContext.Clientes.Remove(cpfCliente);
-            _entityContext.SaveChanges();
+            await _entityContext.SaveChangesAsync();
         }
     }
 }
